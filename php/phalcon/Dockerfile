@@ -13,7 +13,8 @@ RUN set -xe && \
 
 
 # Insall Phalcon Devtools, see https://github.com/phalcon/phalcon-devtools/
-RUN set -xe && \curl -LO https://github.com/phalcon/phalcon-devtools/archive/v${PHALCON_VERSION}.tar.gz && \
+# RUN set -xe && \
+    curl -LO https://github.com/phalcon/phalcon-devtools/archive/v${PHALCON_VERSION}.tar.gz && \
     tar xzf v${PHALCON_VERSION}.tar.gz && \
     mv phalcon-devtools-${PHALCON_VERSION} /usr/local/phalcon-devtools && \
     ln -s /usr/local/phalcon-devtools/phalcon.php /usr/local/bin/phalcon
