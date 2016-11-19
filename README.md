@@ -1,2 +1,11 @@
-# phalcon-php-fpm-alpine
-Image with PhalconPHP 3.0.1 based on PHP 5.6:alpine
+# Docker Things
+
+## Images
+
+### Alpine + PHP 5.6 + PHP-FPM + PHALCON
+
+Includes:
+  - [x] - PhalconDevTools
+  - [ ] - Composer
+  - [ ] - PHPUnit
+  - [ ] - Codeception
