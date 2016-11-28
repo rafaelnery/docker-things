@@ -2,9 +2,9 @@ FROM php:5.6-fpm-alpine
 
 MAINTAINER Rafael Nery <rafael@nery.info>
 
-ENV PHALCON_VERSION=3.0.1
+ENV PHALCON_VERSION=3.0.1 
 
-RUN apk add --update gcc make autoconf 
+RUN apk add --update gcc make autoconf musl-dev
 
 # Phalcon Compile
 
