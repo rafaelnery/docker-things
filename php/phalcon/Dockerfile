@@ -4,7 +4,7 @@ MAINTAINER Rafael Nery <rafael@nery.info>
 
 ENV PHALCON_VERSION=3.0.1 
 
-RUN apk add --update gcc make autoconf musl-dev
+RUN apk add --update gcc make autoconf musl-dev file
 
 # Phalcon Compile
 
