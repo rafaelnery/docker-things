@@ -7,16 +7,22 @@ ENV PHALCON_VERSION=3.0.1
 RUN apk add --update gcc make autoconf musl-dev file
 
 # Phalcon Compile
-
 RUN curl -LO https://github.com/phalcon/cphalcon/archive/v${PHALCON_VERSION}.tar.gz && \
     tar xzf v${PHALCON_VERSION}.tar.gz && cd cphalcon-${PHALCON_VERSION}/build && sh install && \
     echo "extension=phalcon.so" > /usr/local/etc/php/conf.d/phalcon.ini && \
-    cd ../.. && rm -rf v${PHALCON_VERSION}.tar.gz cphalcon-${PHALCON_VERSION} && \
-    curl -LO https://github.com/phalcon/phalcon-devtools/archive/v${PHALCON_VERSION}.tar.gz && \
-    tar xzf v${PHALCON_VERSION}.tar.gz
+    cd ../.. && rm -rf v${PHALCON_VERSION}.tar.gz cphalcon-${PHALCON_VERSION}
     
-RUN mv phalcon-devtools-${PHALCON_VERSION} /usr/local/phalcon-devtools && ln -s /usr/local/phalcon-devtools/phalcon.php /usr/local/bin/phalcon
+# Phalcon DevTools
+  
+RUN curl -LO https://github.com/phalcon/phalcon-devtools/archive/v${PHALCON_VERSION}.tar.gz && \
+    tar xzf v${PHALCON_VERSION}.tar.gz && \    
+    mv phalcon-devtools-${PHALCON_VERSION} /usr/local/phalcon-devtools && \
+    ln -s /usr/local/phalcon-devtools/phalcon.php /usr/local/bin/phalcon
 
+#Composer
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && php composer-setup.php && php -r "unlink('composer-setup.php');" && \
     mv composer.phar /usr/local/bin/composer
-    
+
+#PHPUnit
+
+
