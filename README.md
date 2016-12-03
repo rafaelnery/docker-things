@@ -6,6 +6,6 @@
 
 Includes:
   - [x] - PhalconDevTools
-  - [ ] - Composer
+  - [x] - Composer
   - [ ] - PHPUnit
   - [ ] - Codeception
