@@ -17,7 +17,6 @@ RUN curl -LO https://github.com/phalcon/cphalcon/archive/v${PHALCON_VERSION}.tar
     
 RUN mv phalcon-devtools-${PHALCON_VERSION} /usr/local/phalcon-devtools && ln -s /usr/local/phalcon-devtools/phalcon.php /usr/local/bin/phalcon
 
-RUN mv composer.phar /usr/local/bin/composer && \
-    php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && php composer-setup.php && php -r "unlink('composer-setup.php');" && \
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && php composer-setup.php && php -r "unlink('composer-setup.php');" && \
     mv composer.phar /usr/local/bin/composer
     
