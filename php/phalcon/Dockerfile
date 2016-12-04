@@ -28,3 +28,6 @@ RUN curl -fsSL https://phar.phpunit.de/phpunit.phar > phpunit.phar && chmod +x p
 
 #Codeception
 RUN curl -fsSL http://codeception.com/codecept.phar > codecept.phar && chmod +x codecept.phar && mv codecept.phar /usr/local/bin/codecept
+
+#Clean Then All
+RUN apk del gcc make autoconf musl-dev file --purge && rm -rf /var/cache/apk/*
