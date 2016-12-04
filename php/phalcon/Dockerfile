@@ -4,7 +4,7 @@ MAINTAINER Rafael Nery <rafael@nery.info>
 
 ENV PHALCON_VERSION=3.0.1 
 
-RUN apk add --update gcc make autoconf musl-dev file ca-certificates
+RUN apk add --update gcc make autoconf musl-dev file
 
 # Phalcon Compile
 RUN curl -LO https://github.com/phalcon/cphalcon/archive/v${PHALCON_VERSION}.tar.gz && \
@@ -24,7 +24,7 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
     mv composer.phar /usr/local/bin/composer
 
 #PHPUnit
-RUN wget https://phar.phpunit.de/phpunit.phar && chmod +x phpunit.phar && mv phpunit.phar /usr/local/bin/phpunit
+RUN curl -fsSL https://phar.phpunit.de/phpunit.phar > phpunit.phar && chmod +x phpunit.phar && mv phpunit.phar /usr/local/bin/phpunit
 
 #Codeception
-RUN wget http://codeception.com/codecept.phar && chmod +x codecept.phar && mv codecept.phar /usr/local/bin/codecept
+RUN curl -fsSL http://codeception.com/codecept.phar > codecept.phar && chmod +x codecept.phar && mv codecept.phar /usr/local/bin/codecept
