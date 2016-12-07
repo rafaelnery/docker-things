@@ -3,6 +3,7 @@
 ## Images
 
 ### Alpine + PHP 5.6 + PHP-FPM + PHALCON
+TAG: php-phalcon-alpine
 
 Includes:
   - [PhalconDevTools][1]
