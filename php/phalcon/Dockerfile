@@ -31,3 +31,9 @@ RUN curl -fsSL http://codeception.com/codecept.phar > codecept.phar && chmod +x 
 
 #Clean Then All
 RUN apk del gcc make autoconf musl-dev file --purge && rm -rf /var/cache/apk/*
+
+#socket 
+EXPOSE 9000
+
+#project
+VOLUME ["/var/www/html"]
