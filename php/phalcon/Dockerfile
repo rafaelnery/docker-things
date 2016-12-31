@@ -32,6 +32,9 @@ RUN curl -fsSL http://codeception.com/codecept.phar > codecept.phar && chmod +x 
 #Clean Then All
 RUN apk del gcc make autoconf musl-dev file --purge && rm -rf /var/cache/apk/*
 
+#EXTENSIONS
+RUN docker-php-ext-install pdo pdo_mysql pdo_pgsql
+
 #socket 
 EXPOSE 9000
 
