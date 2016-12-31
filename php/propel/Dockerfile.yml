@@ -1,0 +1,21 @@
+FROM php:5.6-alpine
+
+MAINTAINER Rafael Nery <rafael@nery.info>
+
+ENV PHALCON_VERSION=3.0.1 
+
+#Composer
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && php composer-setup.php && php -r "unlink('composer-setup.php');" && \
+    mv composer.phar /usr/local/bin/composer
+
+#PHPUnit
+RUN curl -fsSL https://phar.phpunit.de/phpunit.phar > phpunit.phar && chmod +x phpunit.phar && mv phpunit.phar /usr/local/bin/phpunit
+
+#Extensions
+RUN docker-php-ext-install pdo pdo_mysql pdo_pgsql
+
+#socket 
+EXPOSE 9000
+
+#project
+VOLUME ["/var/www/html"]
