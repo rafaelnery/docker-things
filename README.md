@@ -2,7 +2,9 @@
 
 ## Images
 
-### Alpine + PHP 5.6 + PHP-FPM + PHALCON
+Alpine + PHP 5.6 + PHP-FPM + PHALCON
+---
+
 #### TAG: php-phalcon-alpine
 
 Includes:
@@ -11,7 +13,9 @@ Includes:
   - [PHPUnit][3]
   - [Codeception][4]
 
-### Alpine + PHP 5.6 
+Alpine + PHP 5.6 
+---
+
 #### TAG: php-db-cli
 
 Includes:
