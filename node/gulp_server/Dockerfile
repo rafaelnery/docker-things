@@ -1,4 +1,4 @@
-FROM       node:argon
+FROM       node:4.7.0-alpine
 MAINTAINER Rafael Nery <rafael@nery.info>
 
 RUN        mkdir -p /application
