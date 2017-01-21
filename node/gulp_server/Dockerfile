@@ -1,4 +1,4 @@
-FROM       node
+FROM       node:argon
 MAINTAINER Rafael Nery <rafael@nery.info>
 
 RUN        mkdir -p /application
